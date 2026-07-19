@@ -1,1 +1,22 @@
+# Project-specific
 hackathon.txt
+ARTICLE_SUBMISSION.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+env/
+venv/
+*.egg-info/
+dist/
+build/
+*.log
+.env
+
+# IDEs
+.vscode/
+.idea/
+.devin
