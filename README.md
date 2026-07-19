@@ -1,4 +1,4 @@
-# AWS certification quiz agent
+# Leitner Loop
 
 An always-on agent that emails you up to ten fresh, AI-generated practice
 questions every two hours for whichever AWS certification you're studying,
