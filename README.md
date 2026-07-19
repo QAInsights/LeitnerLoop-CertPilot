@@ -8,10 +8,18 @@ one-line config change, no redeploy needed.
 
 ## Architecture
 
-EventBridge Scheduler (every 2 hours) -> Quiz Lambda -> Bedrock (writes up
-to 10 questions, 2 per due topic) -> SES (sends one email with all of them)
--> you click an answer link for any question -> API Gateway -> Grading
-Lambda -> DynamoDB (reschedules that topic, feeds the next run's pick).
+```mermaid
+flowchart TD
+    A["EventBridge Scheduler<br/>every 2 hours"] --> B["Quiz Lambda"]
+    B --> C["Bedrock<br/>writes up to 10<br/>questions, 2 per topic"]
+    C --> D["SES<br/>sends one email with all of them"]
+    D --> E["you click an answer<br/>link for any question"]
+    E --> F["API Gateway"]
+    F --> G["Grading Lambda"]
+    G --> H["DynamoDB<br/>reschedules that topic,<br/>feeds the next run's pick"]
+```
+
+![Architecture diagram](images/arch.png)
 
 ## Step 1: Enable Bedrock model access
 
@@ -178,7 +186,7 @@ on those topics is lost.
    updated. The other questions in the same email remain answerable until
    you click them or their 48-hour TTL expires.
 
-## Proof for your article
+## Screenshots
 
 **Email with practice questions**  
 ![Email with practice questions](images/email.png)
@@ -193,4 +201,4 @@ on those topics is lost.
 
 **CloudWatch logs**  
 ![CloudWatch quiz generator log](images/cloudwatch-quiz.png)  
-![CloudWatch grading handler log](images/cloudwathc-grading.png)
+![CloudWatch grading handler log](images/cloudwatch-grading.png)
