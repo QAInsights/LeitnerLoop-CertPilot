@@ -8,17 +8,6 @@ one-line config change, no redeploy needed.
 
 ## Architecture
 
-```mermaid
-flowchart TD
-    A["EventBridge Scheduler<br/>every 2 hours"] --> B["Quiz Lambda"]
-    B --> C["Bedrock<br/>writes up to 10<br/>questions, 2 per topic"]
-    C --> D["SES<br/>sends one email with all of them"]
-    D --> E["you click an answer<br/>link for any question"]
-    E --> F["API Gateway"]
-    F --> G["Grading Lambda"]
-    G --> H["DynamoDB<br/>reschedules that topic,<br/>feeds the next run's pick"]
-```
-
 ![Architecture diagram](images/arch.png)
 
 ## Step 1: Enable Bedrock model access
