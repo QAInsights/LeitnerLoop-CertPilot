@@ -188,5 +188,9 @@ on those topics is lost.
 ![Incorrect answer feedback](images/incorrect-answer.png)  
 ![Answered/Expired question state](images/answered-expired.png)
 
-Still to capture: the EventBridge schedule showing its next scheduled run, and the
-CloudWatch log group for `quiz-generator` showing the scheduled invocation.
+**EventBridge schedule**  
+![EventBridge schedule](images/event-bridge.png)
+
+**CloudWatch logs**  
+![CloudWatch quiz generator log](images/cloudwatch-quiz.png)  
+![CloudWatch grading handler log](images/cloudwathc-grading.png)
