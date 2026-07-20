@@ -1,5 +1,7 @@
 # Leitner Loop
 
+![Leitner Loop](images/Leitner%20Loop.png)
+
 An always-on agent that emails you up to ten fresh, AI-generated practice
 questions every two hours for whichever AWS certification you're studying,
 grades each answer when you click its link, and reschedules that topic
@@ -191,3 +193,4 @@ on those topics is lost.
 **CloudWatch logs**  
 ![CloudWatch quiz generator log](images/cloudwatch-quiz.png)  
 ![CloudWatch grading handler log](images/cloudwatch-grading.png)
+
